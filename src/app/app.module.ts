@@ -10,9 +10,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './main/main.component';
 import { EventTileComponent } from './event-tile/event-tile.component';
 import { EventListComponent } from './event-list/event-list.component';
+import { HeaderComponent } from './header/header.component';
+import { LogoComponent } from './logo/logo.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, LogoutComponent, MainComponent, EventTileComponent, EventListComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    LogoutComponent,
+    HeaderComponent,
+    LogoComponent,
+    MainComponent,
+    EventTileComponent,
+    EventListComponent,
+  ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
