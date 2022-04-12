@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Event } from '../interfaces/event';
+import { EventDetailsService } from '../services/event-details.service';
 
 @Component({
   selector: 'app-event-details',
@@ -8,9 +10,16 @@ import { FormControl } from '@angular/forms';
 })
 export class EventDetailsComponent implements OnInit {
   comment = new FormControl('');
-  constructor() {}
+  event!: Event;
 
-  ngOnInit(): void {}
+  constructor(private eventDetailsService: EventDetailsService) {}
+
+  ngOnInit(): void {
+    this.eventDetailsService.getEventInfo(1).subscribe((res) => {
+      if (typeof res !== 'undefined') this.event = res;
+      console.log(this.event);
+    });
+  }
 
   editEvent() {
     console.log('edit');
@@ -25,5 +34,9 @@ export class EventDetailsComponent implements OnInit {
     console.log(this.comment.value);
     console.log(date);
     this.comment.setValue('');
+  }
+
+  log(param: any) {
+    console.log(param);
   }
 }

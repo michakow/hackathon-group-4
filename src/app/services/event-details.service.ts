@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, of } from 'rxjs';
+import { catchError, map, of } from 'rxjs';
 import { EventsApiService } from './events-api.service';
 
 @Injectable({
@@ -10,12 +10,12 @@ export class EventDetailsService {
   constructor(private eventsApiService: EventsApiService) {}
 
   getEventInfo(eventID: number) {
-    this.eventsApiService
-      .getEvent(eventID)
-      .pipe(catchError((err: HttpErrorResponse) => of(err)))
-      .subscribe((res) => {
+    return this.eventsApiService.getEvent(eventID).pipe(
+      catchError((err: HttpErrorResponse) => of(err)),
+      map((res) => {
         if (res instanceof HttpErrorResponse) return;
         else return res;
-      });
+      })
+    );
   }
 }
