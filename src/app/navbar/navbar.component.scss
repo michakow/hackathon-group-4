@@ -9,6 +9,7 @@ nav {
     align-items: center;
     flex-direction: row;
     height: 100%;
+    list-style: none;
     gap: 5rem;
     li{
       font-family: Lato;
@@ -24,7 +25,7 @@ nav {
       transition: all .35s ease-in-out;
       &:hover{
         border-bottom: 2px solid #000;
-        // font-weight: bold;
+        font-weight: bold;
       }
       a{
         height: 100%;

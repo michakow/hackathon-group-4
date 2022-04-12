@@ -3,12 +3,17 @@
     <img src="../../assets//Envelo_logo_login.svg" alt="Envelo_logo_login">
     <h3>Aplikacja integracyjna</h3>
     <hr>
-    <label>
-      <input placeholder="login" type="text">
-    </label>
-    <label>
-      <input placeholder="password" type="password">
-    </label>
-    <button> Zaloguj</button>
+    <form [formGroup]="form" (ngSubmit)="sendData()">
+      <label>
+        <input formControlName="name" placeholder="login" type="text">
+        <p *ngIf="form.controls['name'].touched && form.controls['name'].errors?.['required']" class="error-message">Nie podano loginu.</p>
+      </label>
+      <label>
+        <input formControlName="password" placeholder="password" type="text">
+        <p *ngIf="form.controls['password'].touched && form.controls['password'].errors?.['required']" class="error-message">Nie podano loginu.</p>
+      </label>
+      <button [disabled]="!form.valid" type="submit"> Zaloguj</button>
+    </form>
+    {{form.value | json}}
   </section>
 </main>
