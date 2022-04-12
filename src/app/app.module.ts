@@ -8,9 +8,10 @@ import { LogoutComponent } from './logout/logout.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './main/main.component';
+import { EventTileComponent } from './event-tile/event-tile.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, LogoutComponent, MainComponent],
+  declarations: [AppComponent, NavbarComponent, LogoutComponent, MainComponent, EventTileComponent],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],

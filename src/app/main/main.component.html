@@ -4,6 +4,6 @@
     <h2>Dostępne wydarzenia</h2>
   </div>
   <div class="content">
-    <p>main works!</p>
+    <app-event-tile *ngFor="let event of eventList; let index = index" [event]="event"></app-event-tile>
   </div>
 </div>
