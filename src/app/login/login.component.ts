@@ -27,8 +27,13 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  sendData(){
-
+  sendData() {
+    if (this.form.invalid) {
+      alert('blad w formularzu czekaj');
+      return;
+    } else {
+      console.log('logged')
+    }
   }
 
 }
