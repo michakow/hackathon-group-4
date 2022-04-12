@@ -12,6 +12,7 @@ import { EventTileComponent } from './event-tile/event-tile.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { HeaderComponent } from './header/header.component';
 import { LogoComponent } from './logo/logo.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { LoginComponent } from './login/login.component';
     MainComponent,
     EventTileComponent,
     EventListComponent,
+    EventDetailsComponent,
     LoginComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule],
