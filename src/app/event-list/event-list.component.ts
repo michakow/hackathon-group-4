@@ -90,4 +90,8 @@ export class EventListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  showEvent(id: number) {
+    console.log(id);
+  }
 }
