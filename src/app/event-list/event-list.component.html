@@ -1,1 +1,4 @@
-<app-event-tile *ngFor="let event of eventList; let index = index" [event]="event" (click)="showEvent(index)"></app-event-tile>
+<button>Dodaj nowe</button>
+<div>
+  <app-event-tile *ngFor="let event of eventList; let index = index" [event]="event" (click)="showEvent(index)"></app-event-tile>
+</div>

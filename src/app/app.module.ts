@@ -12,6 +12,7 @@ import { EventTileComponent } from './event-tile/event-tile.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { HeaderComponent } from './header/header.component';
 import { LogoComponent } from './logo/logo.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { LogoComponent } from './logo/logo.component';
     MainComponent,
     EventTileComponent,
     EventListComponent,
+    EventDetailsComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
