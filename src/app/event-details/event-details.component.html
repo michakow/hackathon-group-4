@@ -39,7 +39,7 @@
   <div class="comments">
     <p>Konwersacja do wydarzenia</p>
     <div class="comment" *ngFor="let comment of event.comments">
-      <p><span>{{comment.author.firstName}} {{comment.author.lastName}}</span> {{comment.date}}</p>
+      <p><span>{{comment.author}}</span> {{comment.date}}</p>
       <p>{{comment.text}}</p>
     </div>
     <textarea [formControl]="comment" placeholder="Treść komentarza" (keyup.enter)="addComment()"></textarea>

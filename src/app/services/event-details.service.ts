@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, of } from 'rxjs';
+import { Comment } from '../interfaces/comment';
 import { EventsApiService } from './events-api.service';
 
 @Injectable({
@@ -17,5 +18,18 @@ export class EventDetailsService {
         else return res;
       })
     );
+  }
+
+  cancelEvent(eventID: number) {
+    console.log('anulowanie wydarzenia o ID:', eventID);
+  }
+
+  editEvent(eventID: number) {
+    console.log('edycja wydarzenia o ID:', eventID);
+  }
+
+  addComent(eventID: number, comment: Comment) {
+    console.log('wydarzenie o ID:', eventID);
+    console.log('komentarz:', comment);
   }
 }
