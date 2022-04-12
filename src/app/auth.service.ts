@@ -19,7 +19,8 @@ export class AuthService {
   private usersUrl: string = 'http://localhost:3000/users';
 
   public logiIn(username: string, password: string) {
-    const searchURL = `${this.usersUrl}?nickname=${username}&password=${password}`;
+    const searchURL = `${this.usersUrl}?username=${username}&password=${password}`;
+    console.log(searchURL);
 
     return this.httpClient.get<User[]>(searchURL).pipe(
       map(
@@ -38,7 +39,7 @@ export class AuthService {
     );
   }
   public logout() {
-    localStorage.removeItem('user')
+    // localStorage.removeItem('user')
     this.authorized.next(null);
   }
 }
