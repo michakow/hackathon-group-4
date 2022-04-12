@@ -6,11 +6,9 @@ import { map, tap } from 'rxjs/operators';
 import { User } from './types';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
-
   private authorized = new BehaviorSubject<User | null>(null);
 
   get authorized$() {
@@ -22,20 +20,25 @@ export class AuthService {
 
   public logiIn(username: string, password: string) {
     const searchURL = `${this.usersUrl}?nickname=${username}&password=${password}`;
-    console.log(searchURL);
-    return this.httpClient
-      .get<User[]>(searchURL)
-      .pipe(
-        map((value) =>
-          value.length > 0
-            ? this.authorized.next(value[0])
-            : this.authorized.next(null)
-        ),
-        tap((value) => console.log(value))
-      )
 
+    return this.httpClient.get<User[]>(searchURL).pipe(
+      map(
+        (value) => {
+          if (value.length > 0) {
+            this.authorized.next(value[0]);
+            localStorage.setItem('user', JSON.stringify(value[0]));
+          } else {
+            this.authorized.next(null);
+          }
+        }
+        // value.length > 0
+        //   ? this.authorized.next(value[0])
+        //   : this.authorized.next(null)
+      )
+    );
   }
   public logout() {
+    localStorage.removeItem('user')
     this.authorized.next(null);
   }
 }
