@@ -1,8 +1,8 @@
 <div class="heading">
   <h3>Wyjście</h3>
   <div class="buttons">
-    <button>Edytuj wydarzenie</button>
-    <button>Anuluj wydarzenie</button>
+    <button (click)="editEvent()">Edytuj wydarzenie</button>
+    <button (click)="cancelEvent()">Anuluj wydarzenie</button>
   </div>
 </div>
 <div class="event-info">
@@ -47,5 +47,5 @@
     <p><span>Jan Kowalski</span> 15.04.2022</p>
     <p>Super pomysł! Wreszcie coś zorganizowane.</p>
   </div>
-  <textarea placeholder="Treść komentarza"></textarea>
+  <textarea [formControl]="comment" placeholder="Treść komentarza" (keyup.enter)="addComment()"></textarea>
 </div>
