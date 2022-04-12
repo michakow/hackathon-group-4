@@ -13,6 +13,7 @@ import { EventListComponent } from './event-list/event-list.component';
 import { HeaderComponent } from './header/header.component';
 import { LogoComponent } from './logo/logo.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { EventDetailsComponent } from './event-details/event-details.component';
     EventTileComponent,
     EventListComponent,
     EventDetailsComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
