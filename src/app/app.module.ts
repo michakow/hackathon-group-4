@@ -9,9 +9,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MainComponent } from './main/main.component';
 import { EventTileComponent } from './event-tile/event-tile.component';
+import { EventListComponent } from './event-list/event-list.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, LogoutComponent, MainComponent, EventTileComponent],
+  declarations: [AppComponent, NavbarComponent, LogoutComponent, MainComponent, EventTileComponent, EventListComponent],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
