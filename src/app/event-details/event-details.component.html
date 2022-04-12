@@ -1,51 +1,54 @@
-<div class="heading">
-  <h3>Wyjście</h3>
-  <div class="buttons">
-    <button (click)="editEvent()">Edytuj wydarzenie</button>
-    <button (click)="cancelEvent()">Anuluj wydarzenie</button>
-  </div>
-</div>
-<div class="event-info">
-  <div class="primary-info">
-    <p class="desc">
-      <span>Opis</span>
-      jakis tam opis bez ladu i skladu
-    </p>
-    <p class="place">
-      <span>Miejsce</span>
-      jakis tam opis bez ladu i skladu
-    </p>
-    <p class="time">
-      <span>Data</span>
-      jakis tam opis bez ladu i skladu
-    </p>
-  </div>
-  <div class="secondary-info">
-    <p class="type">
-      <span>Typ wydarzenia</span>
-      Publiczne
-    </p>
-    <p class="author">
-      <span>Organizator</span>
-      Jan Kowalski
-    </p>
-    <div class="people">
-      <span>Uczestnicy</span>
-      <p>Imie Nazwisko</p>
-      <p>Imie Nazwisko</p>
-      <p>Imie Nazwisko</p>
+<ng-container *ngIf="event; else noEvent">
+  <div class="heading">
+    <h3>{{event.name}}</h3>
+    <div class="buttons">
+      <button (click)="editEvent()">Edytuj wydarzenie</button>
+      <button (click)="cancelEvent()">Anuluj wydarzenie</button>
     </div>
   </div>
-</div>
-<div class="comments">
-  <p>Konwersacja do wydarzenia</p>
-  <div class="comment">
-    <p><span>Jan Kowalski</span> 15.04.2022</p>
-    <p>Super pomysł! Wreszcie coś zorganizowane.</p>
+  <div class="event-info">
+    <div class="primary-info">
+      <p class="desc">
+        <span>Opis</span>
+        {{event.description}}
+      </p>
+      <p class="place">
+        <span>Miejsce</span>
+        {{event.location}}
+      </p>
+      <p class="time">
+        <span>Data</span>
+        {{event.dateOfEventStart | dateTransform}} - {{event.dateOfEventStop | dateTransform}}
+      </p>
+    </div>
+    <div class="secondary-info">
+      <p class="type">
+        <span>Typ wydarzenia</span>
+        {{event.eventType}}
+      </p>
+      <p class="author">
+        <span>Organizator</span>
+        {{event.author.firstName}} {{event.author.lastName}}
+      </p>
+      <div class="people">
+        <span>Uczestnicy</span>
+        <p *ngFor="let person of event.registrants">{{person.firstName}} {{person.lastName}}</p>
+      </div>
+    </div>
   </div>
-  <div class="comment">
-    <p><span>Jan Kowalski</span> 15.04.2022</p>
-    <p>Super pomysł! Wreszcie coś zorganizowane.</p>
+  <div class="comments">
+    <p>Konwersacja do wydarzenia</p>
+    <div class="comment" *ngFor="let comment of event.comments">
+      <p><span>{{comment.author}}</span> {{comment.date}}</p>
+      <p>{{comment.text}}</p>
+    </div>
+    <textarea [formControl]="comment" placeholder="Treść komentarza" (keyup.enter)="addComment()"></textarea>
   </div>
-  <textarea [formControl]="comment" placeholder="Treść komentarza" (keyup.enter)="addComment()"></textarea>
-</div>
+</ng-container>
+
+<ng-template #noEvent>
+  <div class="no-event">
+    <p>Brak wydarzenia!</p>
+    <p>Nie udalo się znaleźć takiego wydarzenia, prawdopodobnie zostało już zakończone lub nigdy nie istniało.</p>
+  </div>
+</ng-template>
