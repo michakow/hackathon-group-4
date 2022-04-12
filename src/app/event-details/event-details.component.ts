@@ -31,7 +31,7 @@ export class EventDetailsComponent implements OnInit {
   }
 
   addComment() {
-    const date = new Date().toLocaleString().split(',')[0];
+    const date = new Date().toLocaleDateString();
     const comment: Comment = {
       author: 'Jan Kazek',
       date: date,
