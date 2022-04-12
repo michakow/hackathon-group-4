@@ -1,4 +1,19 @@
 :host {
+  display: block;
+  text-align: right;
+}
+
+button {
+  padding: 1rem 1.4rem;
+  margin-bottom: 2rem;
+  background-color: #d52b1e;
+  border: none;
+  border-radius: 0.4rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+div {
   display: grid;
   grid-template-columns: repeat(auto-fill, 400px);
   gap: 3rem;
