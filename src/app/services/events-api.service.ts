@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Event } from '../interfaces/event';
 
 @Injectable({
   providedIn: 'root',
@@ -13,5 +14,7 @@ export class EventsApiService {
 
   getEventsParticipate(userID: number) {}
 
-  getEvent(eventID: number) {}
+  getEvent(eventID: number) {
+    return this.http.get<Event>(`http://localhost:3000/events/${eventID}`);
+  }
 }
