@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Event } from '../interfaces/event';
 
 @Component({
   selector: 'app-event-tile',
@@ -6,10 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./event-tile.component.scss'],
 })
 export class EventTileComponent implements OnInit {
-  @Input() event!: any;
+  @Input() event!: Event;
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.event);
-  }
+  ngOnInit(): void {}
 }
