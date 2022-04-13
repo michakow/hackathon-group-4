@@ -1,4 +1,5 @@
-<ng-container *ngIf="event; else noEvent">
+<app-loader *ngIf="showLoader"></app-loader>
+<ng-container *ngIf="event && !showLoader; else noEvent">
   <div class="heading">
     <h3>{{event.name}}</h3>
     <div class="buttons">
@@ -47,7 +48,7 @@
 </ng-container>
 
 <ng-template #noEvent>
-  <div class="no-event">
+  <div class="no-event" *ngIf="!showLoader">
     <p>Brak wydarzenia!</p>
     <p>Nie udalo się znaleźć takiego wydarzenia, prawdopodobnie zostało już zakończone lub nigdy nie istniało.</p>
   </div>

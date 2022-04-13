@@ -15,6 +15,7 @@ import { LogoComponent } from './logo/logo.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { LoginComponent } from './login/login.component';
 import { DateTransformPipe } from './pipes/date-transform.pipe';
+import { LoaderComponent } from './loader/loader.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     EventDetailsComponent,
     LoginComponent,
     DateTransformPipe,
+    LoaderComponent,
     NotFoundComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule],
