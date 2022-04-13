@@ -1,0 +1,4 @@
+<button *ngIf="route === 'my-events'" (click)="navigate()">Dodaj nowe</button>
+<div>
+  <app-event-tile *ngFor="let event of eventList; let index = index" [event]="event" (click)="showEvent(event.id)"></app-event-tile>
+</div>
