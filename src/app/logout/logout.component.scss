@@ -1,3 +1,9 @@
-a {
-  font-weight: bold;
+.iconLogOut{
+  font-size: 3rem;
+  color: #d52b1e;
+  cursor: pointer;
+  &:hover {
+      color: #a12218;
+
+  }
 }
