@@ -6,10 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  appName: string = 'Integracje';
   constructor() {}
 
-  ngOnInit(): void {
-    console.log('Initial commit - Damian');
-  }
+  ngOnInit(): void {}
 }
