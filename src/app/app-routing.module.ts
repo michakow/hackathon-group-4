@@ -53,8 +53,6 @@ const routes: Routes = [
     path: '**',
     pathMatch: 'full',
     component: NotFoundComponent,
-    redirectTo: 'events',
-    pathMatch: 'full',
   },
 ];
 
