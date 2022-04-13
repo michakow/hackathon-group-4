@@ -9,7 +9,7 @@
         <p *ngIf="form.controls['name'].touched && form.controls['name'].errors?.['required']" class="error-message">Nie podano loginu.</p>
       </label>
       <label>
-        <input formControlName="password" placeholder="password" type="text">
+        <input formControlName="password" placeholder="password" type="password">
         <p *ngIf="form.controls['password'].touched && form.controls['password'].errors?.['required']" class="error-message">Nie podano loginu.</p>
       </label>
       <button [disabled]="!form.valid" type="submit"> Zaloguj</button>
