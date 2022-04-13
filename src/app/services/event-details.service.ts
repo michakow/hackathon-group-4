@@ -29,6 +29,7 @@ export class EventDetailsService {
   }
 
   addComent(eventID: number, comment: Comment) {
+    this.eventsApiService.addCommentToEvent(eventID, comment);
     console.log('wydarzenie o ID:', eventID);
     console.log('komentarz:', comment);
   }

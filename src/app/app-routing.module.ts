@@ -7,6 +7,7 @@ import { EventListComponent } from './event-list/event-list.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { MainComponent } from './main/main.component';
 import { LoginGuardGuard } from './login-guard.guard';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { AddEventComponent } from './add-event/add-event.component';
 
 const routes: Routes = [
@@ -24,7 +25,7 @@ const routes: Routes = [
   {
     path: 'events',
     component: MainComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -43,14 +44,15 @@ const routes: Routes = [
         component: EventDetailsComponent,
       },
       {
-        path: 'addevent', component: AddEventComponent
-      }
+        path: 'addevents',
+        component: AddEventComponent,
+      },
     ],
   },
   {
     path: '**',
-    redirectTo: 'events',
     pathMatch: 'full',
+    component: NotFoundComponent,
   },
 ];
 
