@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { debounceTime } from 'rxjs';
 import { Comment } from '../interfaces/comment';
 import { Event } from '../interfaces/event';
 import { EventDetailsService } from '../services/event-details.service';
@@ -12,11 +13,13 @@ import { EventDetailsService } from '../services/event-details.service';
 export class EventDetailsComponent implements OnInit {
   comment = new FormControl('');
   event!: Event;
+  showLoader: boolean = true;
 
   constructor(private eventDetailsService: EventDetailsService) {}
 
   ngOnInit(): void {
     this.eventDetailsService.getEventInfo(0).subscribe((res) => {
+      this.showLoader = false;
       if (typeof res !== 'undefined') this.event = res;
       console.log(this.event);
     });

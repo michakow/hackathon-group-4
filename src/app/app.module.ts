@@ -15,6 +15,7 @@ import { LogoComponent } from './logo/logo.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { LoginComponent } from './login/login.component';
 import { DateTransformPipe } from './pipes/date-transform.pipe';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DateTransformPipe } from './pipes/date-transform.pipe';
     EventDetailsComponent,
     LoginComponent,
     DateTransformPipe,
+    LoaderComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
