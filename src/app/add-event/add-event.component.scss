@@ -1,3 +1,42 @@
 main{
-  
+ section{
+   form{
+     .data_Container{
+      label{
+        input{
+
+        };
+      }
+     }
+     .date_Container{
+      label{
+        input{
+
+        };
+      }
+     }
+     .type_Container{
+      select{
+        option{
+
+        }
+      }
+      textarea{
+
+      }
+     }
+     .invitation_Container{
+      select{
+        option{
+
+        }
+      }
+     }
+     .buttons_Container{
+      button{
+
+      }
+     }
+   }
+ }
 }

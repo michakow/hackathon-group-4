@@ -1,41 +1,44 @@
 <main>
   <section>
-    <form >
-      <div>
+    <form>
+      <div class="data_Container">
         <label>
-          <input type="text">
+          <input placeholder="Nazwa wydarzenia" type="text">
         </label>
         <label>
-          <input type="text">
-        </label>
-      </div>
-      <div>
-        <label>
-          <input type="text">
-        </label>
-        <label>
-          <input type="text">
+          <input placeholder="Miejsce" type="text">
         </label>
       </div>
-      <div>
-        <section>
-          <option value=""></option>
-        </section>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+      <div class="date_Container">
+        <label>
+          <input type="date">
+        </label>
+        <label>
+          <input type="date">
+        </label>
       </div>
-      <div>
+      <div class="type_Container">
+        <select>
+          <option value="">Public</option>
+          <option value="">Private</option>
+        </select>
+        <textarea name="" id="" cols="30" rows="10" placeholder="Opis do 240 znaków"></textarea>
+      </div>
+      <div class="invitation_Container">
         <select name="" id="">
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
+          <option value="">Jan</option>
+          <option value="">Marian</option>
+          <option value="">Ola</option>
+        </select>
+        <select name="" id="">
+          <option value="">Tomasz</option>
+          <option value="">Karol</option>
+          <option value="">Anna</option>
         </select>
       </div>
-      <div>
-        <select name="" id="">
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-        </select>
+      <div class="buttons_Container">
+        <button type="submit">Akceptuj</button>
+        <button type="submit"> Wróc</button>
       </div>
     </form>
   </section>
