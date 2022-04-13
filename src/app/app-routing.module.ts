@@ -44,7 +44,7 @@ const routes: Routes = [
         component: EventDetailsComponent,
       },
       {
-        path: 'addevent',
+        path: 'addevents',
         component: AddEventComponent,
       },
     ],
