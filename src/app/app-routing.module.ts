@@ -7,13 +7,18 @@ import { EventListComponent } from './event-list/event-list.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { MainComponent } from './main/main.component';
 import { LoginGuardGuard } from './login-guard.guard';
+import { AddEventComponent } from './add-event/add-event.component';
 
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   redirectTo: 'events',
+  //   pathMatch: 'full',
+  // },
   {
     path: '',
-    redirectTo: 'events',
-    pathMatch: 'full',
+    component: AddEventComponent
   },
   {
     path: 'login',
