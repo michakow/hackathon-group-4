@@ -25,11 +25,12 @@ nav {
       transition: all .35s ease-in-out;
       &:hover{
         border-bottom: 2px solid #000;
-        font-weight: bold;
       }
       a{
         height: 100%;
         width: 100%;
+        color: black ;
+        text-decoration: none;
 
         // &:hover {
         //   border-bottom: 1px solid #000;
