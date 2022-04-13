@@ -43,7 +43,7 @@ const routes: Routes = [
         component: EventDetailsComponent,
       },
       {
-        path: 'addevent', component: AddEventComponent
+        path: 'addevents', component: AddEventComponent
       }
     ],
   },

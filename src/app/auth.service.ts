@@ -43,4 +43,5 @@ export class AuthService {
     this.authorized.next(null);
     this.router.navigate(['login'])
   }
+
 }

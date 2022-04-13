@@ -27,6 +27,6 @@ export class EventsApiService {
   }
 
   testCors() {
-    return this.http.get<User[]>('https://hackaton-app135.herokuapp.com/users');
+    return this.http.get<User[]>('https://eventualniezadziala.herokuapp.com/users');
   }
 }
