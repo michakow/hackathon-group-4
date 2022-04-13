@@ -9,22 +9,19 @@ import { MainComponent } from './main/main.component';
 import { LoginGuardGuard } from './login-guard.guard';
 import { AddEventComponent } from './add-event/add-event.component';
 
-
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: 'events',
-  //   pathMatch: 'full',
-  // },
   {
     path: '',
-    component: AddEventComponent
+    redirectTo: 'events',
+    pathMatch: 'full',
   },
+
   {
     path: 'login',
     component: LoginComponent,
     // canActivate: [LoginGuardGuard]
   },
+  { path: 'addevent', component: AddEventComponent, canActivate: [AuthGuard] },
   {
     path: 'events',
     component: MainComponent,
@@ -45,21 +42,19 @@ const routes: Routes = [
       {
         path: 'details/:id',
         component: EventDetailsComponent,
-      }
+      },
     ],
   },
   {
     path: '**',
     redirectTo: 'events',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
 ];
-
-
 
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
