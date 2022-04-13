@@ -21,7 +21,6 @@ const routes: Routes = [
     component: LoginComponent,
     // canActivate: [LoginGuardGuard]
   },
-  { path: 'addevent', component: AddEventComponent, canActivate: [AuthGuard] },
   {
     path: 'events',
     component: MainComponent,
@@ -43,6 +42,9 @@ const routes: Routes = [
         path: 'details/:id',
         component: EventDetailsComponent,
       },
+      {
+        path: 'addevent', component: AddEventComponent
+      }
     ],
   },
   {

@@ -19,6 +19,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddEventComponent } from './add-event/add-event.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { AddEventComponent } from './add-event/add-event.component';
     AddEventComponent,
 
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule, FontAwesomeModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule, FontAwesomeModule, RouterModule],
   providers: [],
   bootstrap: [AppComponent],
 })
