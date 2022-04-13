@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { DateTransformPipe } from './pipes/date-transform.pipe';
 import { LoaderComponent } from './loader/loader.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -33,8 +34,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     DateTransformPipe,
     LoaderComponent,
     NotFoundComponent,
+
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })
