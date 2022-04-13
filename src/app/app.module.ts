@@ -18,6 +18,7 @@ import { DateTransformPipe } from './pipes/date-transform.pipe';
 import { LoaderComponent } from './loader/loader.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AddEventComponent } from './add-event/add-event.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     DateTransformPipe,
     LoaderComponent,
     NotFoundComponent,
+    AddEventComponent,
 
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, ReactiveFormsModule, FontAwesomeModule],
